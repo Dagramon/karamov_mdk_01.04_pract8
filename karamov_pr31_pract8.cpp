@@ -12,7 +12,7 @@ DWORD WINAPI Move(LPVOID turtleNumber)
     srand(time(NULL) + (int)turtleNumber);
     while (positions[(int)turtleNumber] < MAP_LENGHT)
     {
-        Sleep(rand() % 2000 + 1000);
+        Sleep(rand() % 200 + 100);
         positions[(int)turtleNumber] += rand() % 3;
     }
     positions[(int)turtleNumber] = MAP_LENGHT-1;
@@ -59,6 +59,18 @@ DWORD WINAPI UpdateMap(LPVOID a)
                 std::cout << '-';
             }
         }
+        /*std::cout << std::endl;
+        for (int i = 0; i < MAP_LENGHT; i++)
+        {
+            if (positions[i] != 0)
+            {
+                std::cout << i;
+            }
+            else
+            {
+                std::cout << '+';
+            }
+        }*/
         Sleep(250);
     }
     return 0;
